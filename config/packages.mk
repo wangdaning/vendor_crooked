@@ -9,7 +9,8 @@ PRODUCT_PACKAGES += \
 
 # Fonts packages
 PRODUCT_PACKAGES += \
-    scorpion-fonts
+    scorpion-fonts \
+    Changelog.html
 
 # Omni packages
 PRODUCT_PACKAGES += \
