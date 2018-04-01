@@ -7,3 +7,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librsjni
 
+# Fonts packages
+PRODUCT_PACKAGES += \
+    scorpion-fonts
+
