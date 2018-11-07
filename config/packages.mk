@@ -16,3 +16,7 @@ PRODUCT_PACKAGES += \
 # Omni packages
 PRODUCT_PACKAGES += \
     OmniStyle
+
+# Subs OMS	
+PRODUCT_PACKAGES += \
+    SubstratumSignature
