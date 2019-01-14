@@ -2,8 +2,8 @@ aosp_devices=('blueline' 'crosshatch' 'dragon' 'marlin' 'shamu' 'taimen')
 caf_devices=('cheeseburger' 'dumpling' 'nash' 'oneplus3' 'potter' 'tenderloin')
 
 function lunch_devices() {
-    add_lunch_combo du_${device}-user
-    add_lunch_combo du_${device}-userdebug
+    add_lunch_combo scorpion_${device}-user
+    add_lunch_combo scorpion_${device}-userdebug
 }
 
 if [[ $( grep -i "caf" manifest/README.md) ]]; then
