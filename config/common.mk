@@ -28,6 +28,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
 
+#Boot Animation
+PRODUCT_COPY_FILES += \
+    vendor/scorpion/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
+
+
 PRODUCT_COPY_FILES += \
     vendor/scorpion/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/scorpion/prebuilt/common/bin/sysinit:system/bin/sysinit
@@ -71,7 +76,7 @@ include vendor/scorpion/config/packages.mk
 include vendor/scorpion/config/branding.mk
 
 # Themes
-include vendor/themes/common.mk
+#include vendor/themes/common.mk
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/scorpion/overlay/common
