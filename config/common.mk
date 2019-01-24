@@ -76,7 +76,7 @@ include vendor/scorpion/config/packages.mk
 include vendor/scorpion/config/branding.mk
 
 # Themes
-#include vendor/themes/common.mk
+include vendor/themes/common.mk
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/scorpion/overlay/common
