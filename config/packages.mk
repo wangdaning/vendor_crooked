@@ -1,7 +1,6 @@
 # Packages
 PRODUCT_PACKAGES += \
-    WallpaperPicker \
-    WeatherClient
+    WallpaperPicker 
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
