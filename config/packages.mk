@@ -10,6 +10,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     scorpion-fonts
 
-# Weather packages
+# Omni packages
 PRODUCT_PACKAGES += \
-    OmniJaws
+    OmniJaws \
+    OmniStyle
