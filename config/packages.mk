@@ -12,5 +12,4 @@ PRODUCT_PACKAGES += \
 
 # Omni packages
 PRODUCT_PACKAGES += \
-    OmniJaws \
     OmniStyle
