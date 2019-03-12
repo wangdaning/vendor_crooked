@@ -1,5 +1,5 @@
 aosp_devices=('blueline' 'crosshatch' 'marlin' 'sailfish')
-caf_devices=('cheeseburger' 'oneplus3')
+caf_devices=('oneplus3' 'cheeseburger' 'dumpling')
 
 function lunch_devices() {
     add_lunch_combo scorpion_${device}-user
