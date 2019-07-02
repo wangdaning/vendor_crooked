@@ -1,5 +1,5 @@
 # Versioning System
-SCORPION_BASE_VERSION = v2.6
+SCORPION_BASE_VERSION = v2.7
 
 # Set all versions
 DATE := $(shell date +%Y%m%d)
