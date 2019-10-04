@@ -65,9 +65,9 @@ PRODUCT_COPY_FILES += \
     vendor/extras/build/tools/50-scorpion.sh:system/addon.d/50-scorpion.sh
 
 # Weather client
-PRODUCT_COPY_FILES += \
-    vendor/scorpion/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
-    vendor/scorpion/etc/default-permissions/org.pixelexperience.weather.client.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml
+#PRODUCT_COPY_FILES += \
+#    vendor/scorpion/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
+#    vendor/scorpion/etc/default-permissions/org.pixelexperience.weather.client.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml
 
 # Packages
 include vendor/scorpion/config/packages.mk
