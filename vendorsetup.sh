@@ -1,4 +1,4 @@
-aosp_devices=('blueline' 'crosshatch' 'marlin' 'sailfish')
+aosp_devices=('blueline' 'bonito' 'crosshatch' 'marlin' 'sailfish' 'sargo')
 caf_devices=('oneplus3' 'cheeseburger' 'dumpling')
 
 function lunch_devices() {
