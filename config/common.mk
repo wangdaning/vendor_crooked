@@ -28,11 +28,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     net.tethering.noprovisioning=true
 
-#Boot Animation
-PRODUCT_COPY_FILES += \
-    vendor/scorpion/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
-
-
 PRODUCT_COPY_FILES += \
     vendor/scorpion/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/scorpion/prebuilt/common/bin/sysinit:system/bin/sysinit
