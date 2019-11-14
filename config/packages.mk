@@ -1,6 +1,8 @@
 # Packages
 PRODUCT_PACKAGES += \
     DU-Themes \
+    LatinIMEGooglePrebuilt \
+    SoundPickerPrebuilt \
     WallpaperPicker2
 
 # Include librsjni explicitly to workaround GMS issue
