@@ -28,13 +28,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     net.tethering.noprovisioning=true
 
-PRODUCT_COPY_FILES += \
-    vendor/scorpion/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/scorpion/prebuilt/common/bin/sysinit:system/bin/sysinit
-
 # Init files
 PRODUCT_COPY_FILES += \
-    vendor/scorpion/prebuilt/common/etc/init.local.rc:system/etc/init/dirtyunicorns.rc
+    vendor/scorpion/prebuilt/common/etc/dirtyunicorns.rc:system/etc/init/dirtyunicorns.rc
 
 # Backup tool
 PRODUCT_COPY_FILES += \
