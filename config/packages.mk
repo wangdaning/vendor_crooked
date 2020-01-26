@@ -1,7 +1,6 @@
 # Packages
 PRODUCT_PACKAGES += \
     DU-Themes \
-    NexusLauncherRelease \
     WallpaperPicker2
 #   CustomDoze \
 #   WeatherClient
