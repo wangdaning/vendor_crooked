@@ -30,6 +30,11 @@ SCORPION_PRODUCT_PROPERTIES += \
 SCORPION_PRODUCT_PROPERTIES += \
     net.tethering.noprovisioning=true
 
+# Dex preopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI \
+    Launcher3QuickStep
+
 # Init files
 PRODUCT_COPY_FILES += \
     vendor/scorpion/prebuilt/common/etc/dirtyunicorns.rc:system/etc/init/dirtyunicorns.rc
