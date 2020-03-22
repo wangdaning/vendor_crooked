@@ -2,7 +2,7 @@
 SCORPION_BASE_VERSION = v3.1
 
 ifndef SCORPION_BUILD_TYPE
-    SCORPION_BUILD_TYPE := Beta
+    SCORPION_BUILD_TYPE := Official
 endif
 
 # Set all versions
