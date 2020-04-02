@@ -38,7 +38,7 @@
 
     <!-- Tiles native to System UI. Order should match "quick_settings_tiles_default" -->
     <string name="quick_settings_tiles_stock" translatable="false">
-wifi,dnd,cast,flashlight,bt,location,airplane,night,cell,rotation,battery,hotspot,inversion,caffeine,nfc,theme,immersive,mono,adb_network,screenshot,heads_up
+wifi,dnd,cast,flashlight,bt,location,airplane,night,cell,rotation,battery,hotspot,inversion,caffeine,soundsearch,nfc,theme,immersive,mono,adb_network,screenshot,heads_up
     </string>
 
     <!-- Smart replies in notifications: Whether we disable the feature unless the app targets P -->
