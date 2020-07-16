@@ -1,4 +1,4 @@
-devices=('blueline' 'bonito' 'coral' 'crosshatch')
+devices=('blueline' 'bonito' 'coral' 'crosshatch' 'taimen' 'walleye')
 
 function lunch_devices() {
     add_lunch_combo scorpion_${device}-user
