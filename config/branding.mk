@@ -1,8 +1,8 @@
 # Versioning System
-SCORPION_BASE_VERSION = v3.6
+SCORPION_BASE_VERSION = v4.0
 
 ifndef SCORPION_BUILD_TYPE
-    SCORPION_BUILD_TYPE := Official
+    SCORPION_BUILD_TYPE := Beta
 endif
 
 # Set all versions
