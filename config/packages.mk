@@ -1,10 +1,10 @@
 # Packages
 PRODUCT_PACKAGES += \
-#    DU-Themes \
-#    LatinIMEGooglePrebuilt \
-#    SoundPickerPrebuilt \
-#    WallpaperPicker2 \
-    QuickAccessWallet
+    LatinIMEGooglePrebuilt \
+    SoundPickerPrebuilt \
+    WallpaperPicker2 \
+    QuickAccessWallet \
+#   DU-Themes \
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
