@@ -2,6 +2,7 @@
 PRODUCT_PACKAGES += \
     LatinIMEGooglePrebuilt \
     SoundPickerPrebuilt \
+    SimpleDeviceConfig \
     WallpaperPicker2 \
     QuickAccessWallet \
 #   DU-Themes \
