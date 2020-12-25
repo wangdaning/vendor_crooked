@@ -65,4 +65,4 @@ include vendor/scorpion/config/branding.mk
 include vendor/themes/common.mk
 
 # Overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/scorpion/overlay/common
+DEVICE_PACKAGE_OVERLAYS += vendor/scorpion/overlay/common
