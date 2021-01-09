@@ -5,7 +5,7 @@ PRODUCT_PACKAGES += \
     SimpleDeviceConfig \
     WallpaperPicker2 \
     QuickAccessWallet \
-#   DU-Themes \
+    DU-Themes
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
