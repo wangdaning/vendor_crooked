@@ -27,5 +27,8 @@
         <!-- Enable privacy indicators -->
         <item>privacy/permissions_hub_2_enabled=true</item>
         <item>privacy/permissions_hub_enabled=true</item>
+        
+        <!-- Now Playing (Pixel 2017) -->
+        <item>device_personalization_services/NowPlaying__ambient_music_index_manifest_17_09_02=167:https://storage.googleapis.com/music-iq-db/updatable_ytm_db/20210221-030046/manifest.json</item>
     </string-array>
 </resources>
