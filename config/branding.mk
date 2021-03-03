@@ -1,5 +1,5 @@
 # Versioning System
-SCORPION_BASE_VERSION = v4.2
+SCORPION_BASE_VERSION = v4.3
 
 ifndef SCORPION_BUILD_TYPE
     SCORPION_BUILD_TYPE := Unofficial
