@@ -8,6 +8,8 @@ SCORPION_PRODUCT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
+scorpion_device := $(patsubst %f,%,$(subst scorpion_,,$(TARGET_PRODUCT)))
+
 # General additions
 SCORPION_PRODUCT_PROPERTIES += \
     keyguard.no_require_sim=true \
@@ -67,6 +69,7 @@ include vendor/themes/common.mk
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/scorpion/overlay/common
 
+ifneq ($(filter blueline bonito crosshatch redfin sunfish taimen walleye,$(scorpion_device)),)
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED ?= true
 ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
@@ -76,4 +79,5 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
+endif
 endif
