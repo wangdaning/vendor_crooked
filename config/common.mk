@@ -34,7 +34,22 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/priv-app/DocumentsUIGoogle/DocumentsUIGoogle.apk \
     system/priv-app/GoogleExtServices/GoogleExtServices.apk \
     system/priv-app/GooglePackageInstaller/GooglePackageInstaller.apk \
-    system/priv-app/TagGoogle/TagGoogle.apk
+    system/priv-app/TagGoogle/TagGoogle.apk \
+    system/etc/permissions/android.hardware.biometrics.face.xml \
+    system/etc/permissions/privapp-permissions-com.crdroid.faceunlock.xml \
+    system/etc/sysconfig/hiddenapi-whitelist-com.crdroid.faceunlock.xml \
+    system/lib64/faceunlock_vendor_dependencies.so \
+    system/lib64/libFaceDetectCA.so \
+    system/lib64/libMegviiUnlock-jni-1.2.so \
+    system/lib64/libMegviiUnlock.so \
+    system/lib64/libarcsoft-lib.so \
+    system/lib64/libarcsoft_faceid.so \
+    system/lib64/libarcsoftbase.so \
+    system/lib64/libmegface.so \
+    system/lib64/libmpbase.so \
+    system/etc/permissions/privapp-permissions-org.pixelexperience.faceunlock.xml \
+    system/etc/sysconfig/hiddenapi-whitelist-org.pixelexperience.faceunlock.xml \
+    system/priv-app/FaceUnlockService/FaceUnlockService.apk
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -65,6 +80,16 @@ endif
 # Copy quick tap enable sysconfig
 PRODUCT_COPY_FILES += \
     vendor/scorpion/prebuilt/common/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
+    
+# Face Unlock
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+    
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face_unlock_service.enabled=true
+    
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 
 # Scorpion-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
