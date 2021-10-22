@@ -1,3 +1,7 @@
+kernel_headers {
+    name: "device_kernel_headers_system",
+}
+
 // Target platform agnostic config modules
 soong_config_module_type {
     name: "disable_postrender_cleanup",
@@ -387,66 +391,6 @@ vold_hw_fde_perf {
     soong_config_variables: {
         supports_hw_fde_perf: {
             cflags: ["-DCONFIG_HW_DISK_ENCRYPT_PERF"],
-            shared_libs: ["libcryptfs_hw"],
-        },
-    },
-}
-
-soong_config_module_type {
-    name: "qti_cryptfshw_qsee",
-    module_type: "cc_defaults",
-    config_namespace: "lineageQcomVars",
-    bool_variables: ["should_wait_for_qsee"],
-    properties: ["cflags"],
-}
-
-qti_cryptfshw_qsee {
-    name: "qti_cryptfshw_qsee_defaults",
-    soong_config_variables: {
-        should_wait_for_qsee: {
-            cflags: ["-DWAIT_FOR_QSEE"],
-        },
-    },
-}
-
-soong_config_module_type {
-    name: "surfaceflinger_qcom_extensions",
-    module_type: "cc_defaults",
-    config_namespace: "lineageQcomVars",
-    value_variables: ["qcom_display_headers_namespace"],
-    properties: [
-        "cppflags",
-        "header_libs",
-    ],
-}
-
-surfaceflinger_qcom_extensions {
-    name: "surfaceflinger_qcom_ext_defaults",
-    soong_config_variables: {
-        qcom_display_headers_namespace: {
-            cppflags: ["-DQCOM_UM_FAMILY"],
-            header_libs: ["//%s:display_intf_headers"],
-        },
-    },
-}
-
-soong_config_module_type {
-    name: "stagefright_qcom_legacy",
-    module_type: "cc_defaults",
-    config_namespace: "lineageQcomVars",
-    bool_variables: ["uses_qcom_bsp_legacy"],
-    properties: ["cppflags"],
-}
-
-stagefright_qcom_legacy {
-    name: "stagefright_qcom_legacy_defaults",
-    soong_config_variables: {
-        uses_qcom_bsp_legacy: {
-            cppflags: ["-DQCOM_BSP_LEGACY"],
-        },
-    },
-}
-NCRYPT_PERF"],
             shared_libs: ["libcryptfs_hw"],
         },
     },
