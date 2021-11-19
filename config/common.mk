@@ -52,11 +52,6 @@ PRODUCT_COPY_FILES += \
     vendor/extras/build/tools/backuptool.functions:install/bin/backuptool.functions \
     vendor/extras/build/tools/50-scorpion.sh:system/addon.d/50-scorpion.sh
 
-# Weather client
-#PRODUCT_COPY_FILES += \
-#    vendor/scorpion/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
-#    vendor/scorpion/etc/default-permissions/org.pixelexperience.weather.client.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml
-
 # Packages
 include vendor/scorpion/config/packages.mk
 
@@ -64,7 +59,7 @@ include vendor/scorpion/config/packages.mk
 include vendor/scorpion/config/branding.mk
 
 # Themes
-#include vendor/themes/common.mk
+include vendor/themes/common.mk
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/scorpion/overlay/common
