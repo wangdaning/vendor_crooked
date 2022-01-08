@@ -81,6 +81,10 @@ include vendor/crooked/config/fonts.mk
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/crooked/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/crooked/overlay/common
 
+# Black Themes
+PRODUCT_PACKAGES += \
+    AndroidBlackThemeOverlay
+
 # Face Unlock
 PRODUCT_PACKAGES += \
     FaceUnlockService
