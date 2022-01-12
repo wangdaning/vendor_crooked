@@ -24,6 +24,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.strictmode.disable=true
 endif
 
+# Scorpion specific requirements
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/app/GoogleExtShared/GoogleExtShared.apk \
+    system/etc/permissions/privapp-permissions-google.xml \
+    system/media/bootanimation.zip
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/scorpion/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
