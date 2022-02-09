@@ -132,6 +132,9 @@ PRODUCT_PACKAGES += \
     LineageThemesStub \
     ThemePicker
 
+# Inherit from themes config
+$(call inherit-product, vendor/scorpion/config/themes.mk)
+
 # Config
 PRODUCT_PACKAGES += \
     SimpleDeviceConfig
