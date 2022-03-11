@@ -29,6 +29,7 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/app/GoogleExtShared/GoogleExtShared.apk \
     system/app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk \
     system/etc/permissions/privapp-permissions-google.xml \
+    system/etc/permissions/privapp-permissions-statix-system.xml \
     system/media/bootanimation.zip \
     system/priv-app/DocumentsUIGoogle/DocumentsUIGoogle.apk \
     system/priv-app/GoogleExtServices/GoogleExtServices.apk \
@@ -64,6 +65,12 @@ endif
 # Scorpion-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
     vendor/scorpion/config/permissions/lineage-sysconfig.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/lineage-sysconfig.xml
+    
+PRODUCT_COPY_FILES += \
+    vendor/scorpion/prebuilt/common/etc/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+    
+PRODUCT_COPY_FILES += \
+    vendor/scorpion/prebuilt/common/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sensitive_pn.xml
 
 # Scorpion-specific init rc file
 PRODUCT_COPY_FILES += \
@@ -84,6 +91,11 @@ PRODUCT_COPY_FILES += \
 # This is Scorpion!
 PRODUCT_COPY_FILES += \
     vendor/scorpion/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.android.xml
+    
+# copy privapp permissions
+PRODUCT_COPY_FILES += \
+    vendor/scorpion/prebuilt/common/etc/permissions/privapp-permissions-statix-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-statix-product.xml \
+    vendor/scorpion/prebuilt/common/etc/permissions/privapp-permissions-statix-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-statix-system.xml
 
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

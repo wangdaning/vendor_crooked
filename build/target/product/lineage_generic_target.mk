@@ -16,3 +16,6 @@ $(call inherit-product, vendor/scorpion/config/common_full_phone.mk)
 
 # Allow building otatools
 TARGET_FORCE_OTA_PACKAGE := true
+
+# No kernel
+TARGET_NO_KERNEL_OVERRIDE := true

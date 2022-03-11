@@ -17,7 +17,6 @@ $(call inherit-product, build/target/product/gsi_release.mk)
 
 include vendor/scorpion/build/target/product/lineage_generic_target.mk
 
-TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_USES_64_BIT_BINDER := true
 
 # Enable mainline checking
