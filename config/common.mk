@@ -62,6 +62,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 endif
 endif
 
+# Copy quick tap enable sysconfig
+PRODUCT_COPY_FILES += \
+    vendor/scorpion/prebuilt/common/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
+
 # Scorpion-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
     vendor/scorpion/config/permissions/lineage-sysconfig.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/lineage-sysconfig.xml
@@ -142,6 +146,7 @@ PRODUCT_COPY_FILES += \
 # Themes
 PRODUCT_PACKAGES += \
     LineageThemesStub \
+    RepainterServicePriv \
     ThemePicker
 
 # Inherit from themes config

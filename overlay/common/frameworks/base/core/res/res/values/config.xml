@@ -57,6 +57,14 @@
 
     <!-- Enable lockscreen rotation by default -->
     <bool name="config_enableLockScreenRotation">true</bool>
+    
+    <!-- The package name for the system's smartspace service.
+     This service returns smartspace results.
+     This service must be trusted, as it can be activated without explicit consent of the user.
+     If no service with the specified name exists on the device, smartspace will be disabled.
+     Example: "com.android.intelligence/.SmartspaceService"
+    -->
+    <string name="config_defaultSmartspaceService">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiSmartspaceService</string>
 
     <!-- Set this to true to enable the platform's auto-power-save modes like doze and
          app standby.  These are not enabled by default because they require a standard
