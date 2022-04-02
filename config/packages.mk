@@ -7,13 +7,10 @@ PRODUCT_PACKAGES += \
     CustomDoze \
     ThemePicker \
     SimpleDeviceConfig \
-    StatiXOSWalls \
     QuickAccessWallet
 
 # App overrides
-$(call inherit-product, vendor/lawnicons/product.mk)
 PRODUCT_PACKAGES += \
-    StatixLauncher \
     StatixSystemUI \
     StatixSettings
 
@@ -22,10 +19,8 @@ PRODUCT_PACKAGES += \
     GoogleCameraGo
 
 # Google Pixel Launcher
-ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
 PRODUCT_PACKAGES += \
     PixelLauncher
-endif
 
 # Updaters
 ifeq ($(STATIX_BUILD_TYPE),OFFICIAL)

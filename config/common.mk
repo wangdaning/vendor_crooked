@@ -1,9 +1,5 @@
 include vendor/statix/build/core/vendor/*.mk
 
-ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
-$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
-endif
-
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/statix/build/core/ProductConfigQcom.mk
 endif
@@ -45,11 +41,9 @@ PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-statix-system.xml \
     vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-se.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-statix-se.xml
 
-# Copy quick tap enable sysconfig
-ifneq ($(DISABLE_COLUMBUS), true)
+
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
-endif
 
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -87,6 +81,16 @@ include vendor/statix/config/fonts.mk
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/statix/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/statix/overlay/common
 
+# Face Unlock
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+    
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face_unlock_service.enabled=true
+    
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
+
 # Artifact path requirements
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/etc/init/init.statix.rc \
@@ -96,4 +100,17 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib/librsjni.so \
     system/lib64/libRSSupport.so \
     system/lib64/libblasV8.so \
+    system/etc/permissions/android.hardware.biometrics.face.xml \
+    system/etc/permissions/privapp-permissions-com.crdroid.faceunlock.xml \
+    system/etc/sysconfig/hiddenapi-whitelist-com.crdroid.faceunlock.xml \
+    system/lib64/faceunlock_vendor_dependencies.so \
+    system/lib64/libFaceDetectCA.so \
+    system/lib64/libMegviiUnlock-jni-1.2.so \
+    system/lib64/libMegviiUnlock.so \
+    system/lib64/libarcsoft-lib.so \
+    system/lib64/libarcsoft_faceid.so \
+    system/lib64/libarcsoftbase.so \
+    system/lib64/libmegface.so \
+    system/lib64/libmpbase.so \
+    system/priv-app/FaceUnlockService/FaceUnlockService.apk \
     system/lib64/librsjni.so
