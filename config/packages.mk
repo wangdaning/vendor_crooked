@@ -6,15 +6,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CustomDoze \
     RepainterServicePriv \
-    ThemePicker \
     SimpleDeviceConfig \
     StatiXOSWalls \
     QuickAccessWallet
 
 # App overrides
 PRODUCT_PACKAGES += \
+    StatixLauncher \
     StatixSystemUI \
-    StatixSettings
+    StatixSettings \
+    StatixThemePicker
 
 # Preopt StatixSystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
