@@ -7,6 +7,7 @@ PRODUCT_PACKAGES += \
     CustomDoze \
     ThemePicker \
     SimpleDeviceConfig \
+    StatiXOSWalls \
     QuickAccessWallet
 
 # App overrides
@@ -14,13 +15,19 @@ PRODUCT_PACKAGES += \
     StatixSystemUI \
     StatixSettings
 
+# Preopt StatixSystemUI
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    StatixSystemUI
+
 # Google Camera GO
 PRODUCT_PACKAGES += \
     GoogleCameraGo
 
 # Google Pixel Launcher
+ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
 PRODUCT_PACKAGES += \
     PixelLauncher
+endif
 
 # Updaters
 ifeq ($(STATIX_BUILD_TYPE),OFFICIAL)

@@ -1,8 +1,6 @@
-# Build fingerprint
-ifneq ($(BUILD_FINGERPRINT),)
+# Only use stock build fingerprint for Google Play Services
 ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.build.fingerprint=$(BUILD_FINGERPRINT)
-endif
+    ro.build.stock_fingerprint=$(BUILD_FINGERPRINT)
 
 ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.statix.version=$(STATIX_BASE_VERSION)-$(STATIX_BUILD_TYPE)-$(BUILD_DATE)-$(BUILD_TIME) \
