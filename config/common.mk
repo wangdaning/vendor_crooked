@@ -1,7 +1,7 @@
-include vendor/statix/build/core/vendor/*.mk
+include vendor/crooked/build/core/vendor/*.mk
 
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
-include vendor/statix/build/core/ProductConfigQcom.mk
+include vendor/crooked/build/core/ProductConfigQcom.mk
 endif
 
 $(call inherit-product, vendor/qcom/opensource/power/power-vendor-board.mk)
@@ -37,13 +37,13 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # copy privapp permissions
 PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-statix-product.xml \
-    vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-statix-system.xml \
-    vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-se.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-statix-se.xml
+    vendor/crooked/prebuilt/common/etc/permissions/privapp-permissions-crooked-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-crooked-product.xml \
+    vendor/crooked/prebuilt/common/etc/permissions/privapp-permissions-crooked-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-crooked-system.xml \
+    vendor/crooked/prebuilt/common/etc/permissions/privapp-permissions-crooked-se.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-crooked-se.xml
 
 
 PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/common/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
+    vendor/crooked/prebuilt/common/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
 
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -53,33 +53,33 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.iorapd.enable=true
 
-# Statix-specific init file
+# Crooked-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/common/etc/init.statix.rc:system/etc/init/init.statix.rc
+    vendor/crooked/prebuilt/common/etc/init.crooked.rc:system/etc/init/init.crooked.rc
 
 # Sysconfig
 PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/common/etc/sysconfig/game_overlay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game_overlay.xml
+    vendor/crooked/prebuilt/common/etc/sysconfig/game_overlay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game_overlay.xml
 
 # Build ID
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_DISPLAY_ID="$(BUILD_ID)-$(TARGET_BUILD_VARIANT)"
 
 # Packages
-include vendor/statix/config/packages.mk
+include vendor/crooked/config/packages.mk
 
 # Branding
-include vendor/statix/config/branding.mk
+include vendor/crooked/config/branding.mk
 
 # Bootanimation
-include vendor/statix/config/bootanimation.mk
+include vendor/crooked/config/bootanimation.mk
 
 # Fonts
-include vendor/statix/config/fonts.mk
+include vendor/crooked/config/fonts.mk
 
 # Overlays
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/statix/overlay
-DEVICE_PACKAGE_OVERLAYS += vendor/statix/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/crooked/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/crooked/overlay/common
 
 # Face Unlock
 PRODUCT_PACKAGES += \
@@ -93,8 +93,8 @@ PRODUCT_COPY_FILES += \
 
 # Artifact path requirements
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
-    system/etc/init/init.statix.rc \
-    system/etc/permissions/privapp-permissions-statix-system.xml \
+    system/etc/init/init.crooked.rc \
+    system/etc/permissions/privapp-permissions-crooked-system.xml \
     system/lib/libRSSupport.so \
     system/lib/libblasV8.so \
     system/lib/librsjni.so \

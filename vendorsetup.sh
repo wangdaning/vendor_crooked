@@ -1,8 +1,8 @@
-devices=( 'cannon' 'guacamoleb' 'lemonadep' 'mata' 'oriole' 'sake' 'raven' 'TP1803')
+devices=( 'coral' 'oriole' 'raven' 'sunfish')
 
 function lunch_devices() {
-    add_lunch_combo statix_${device}-user
-    add_lunch_combo statix_${device}-userdebug
+    add_lunch_combo crooked_${device}-user
+    add_lunch_combo crooked_${device}-userdebug
 }
 
 for device in ${devices[@]}; do

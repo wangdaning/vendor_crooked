@@ -29,11 +29,11 @@ from xml.etree import ElementTree
 
 
 PRODUCT = sys.argv[1]
-BRANCH = "sc-v2"
-ORGANIZATION_NAME = "StatiXOS"
-DEPENDENCIES_FILE_NAME = "statix.dependencies"
+BRANCH = "cr1"
+ORGANIZATION_NAME = "CrookedAndroid"
+DEPENDENCIES_FILE_NAME = "crooked.dependencies"
 LOCAL_MANIFESTS_PATH = ".repo/local_manifests/"
-LOCAL_MANIFESTS_FILE_NAME = "electric_manifest.xml"
+LOCAL_MANIFESTS_FILE_NAME = "crooked_manifest.xml"
 CUSTOM_MANIFEST_NAME = "include.xml"
 
 try:
@@ -139,7 +139,7 @@ def add_dependencies(repos, is_initial_fetch):
                     continue
         else:
             if repo["branch"] == BRANCH and "remote" not in repo:
-                repo["remote"] = "statix"
+                repo["remote"] = "ca"
             if is_initial_fetch:
                 repo["remote"] = get_primary_remote()
             if "remote" not in repo:
