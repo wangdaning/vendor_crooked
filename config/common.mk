@@ -119,3 +119,5 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib64/libmpbase.so \
     system/priv-app/FaceUnlockService/FaceUnlockService.apk \
     system/lib64/librsjni.so
+    system/etc/permissions/privapp_whitelist_com.crooked.updater.xml \
+    system/priv-app/Updater/Updater.apk
