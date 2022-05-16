@@ -16,16 +16,36 @@
 # -----------------------------------------------------------------
 # Crooked Android OTA update package
 
+#
+# Build system colors
+#
+ifneq ($(BUILD_WITH_COLORS),0)
+    include $(TOP_DIR)vendor/crooked/build/core/colors.mk
+endif
+
+
 CROOKED_TARGET_PACKAGE := $(PRODUCT_OUT)/$(CROOKED_VERSION).zip
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CROOKED_TARGET_PACKAGE)
 #	$(hide) $(MD5SUM) $(CROOKED_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CROOKED_TARGET_PACKAGE).md5sum
-	@echo " "
-	@echo " "
-	@echo " CROOKED ANDROID "
-	@echo " "
-	@echo " "
-	@echo "Package Complete: $(CROOKED_TARGET_PACKAGE)" >&2
-	@echo "Package size: `du -h $(CROOKED_TARGET_PACKAGE) | cut -f 1`"
+	@echo -e ${CL_GRN}"Success:" >&2
+
+	@echo -e ${CL_CYN}""
+	@echo -e ${CL_CYN}"   ______                 __            __"
+	@echo -e ${CL_CYN}"  / ____/________  ____  / /_____  ____/ /"
+	@echo -e ${CL_CYN}" / /   / ___/ __ \/ __ \/ //_/ _ \/ __  / "
+	@echo -e ${CL_CYN}"/ /___/ /  / /_/ / /_/ / ,< /  __/ /_/ /  "
+	@echo -e ${CL_CYN}"\______/   \____/\______/|_|\___/\__,_/ __"
+	@echo -e ${CL_CYN}"   /   |  ____  ____/ /________  (_)___/ /"
+	@echo -e ${CL_CYN}"  / /| | / __ \/ __  / ___/ __ \/ / __  / "
+	@echo -e ${CL_CYN}" / ___ |/ / / / /_/ / /  / /_/ / / /_/ /  "
+	@echo -e ${CL_CYN}"/_/  |_/_/ /_/\__,_/_/   \____/_/\__,_/   "
+	@echo -e ${CL_CYN}" "
+	@echo -e ${CL_YLW}"Device Name: $(TARGET_DEVICE)"
+	@echo -e ${CL_GRN}"========================================================================="
+	@echo "Package Name: $(CROOKED_VERSION)" >&2
+	@echo "Package Size: `du -h $(CROOKED_TARGET_PACKAGE) | cut -f 1`"
+	@echo -e ${CL_GRN}"========================================================================="
+	@echo -e ${CL_RED}"Lets Get Crooked!"
