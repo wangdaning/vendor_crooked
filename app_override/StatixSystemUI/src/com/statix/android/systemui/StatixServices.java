@@ -59,9 +59,6 @@ public class StatixServices extends VendorServices {
         AmbientIndicationContainer ambientIndicationContainer = mStatusBar.getNotificationShadeWindowView().findViewById(R.id.ambient_indication_container);
         ambientIndicationContainer.initializeView(mStatusBar);
         addService(new AmbientIndicationService(mContext, ambientIndicationContainer, mAlarmManager));
-        if (mContext.getPackageManager().hasSystemFeature("android.hardware.context_hub") && new ElmyraContext(mContext).isAvailable()) {
-            addService(new ElmyraService(mContext, mServiceConfigurationGoogle.get(), mUiEventLogger));
-        }
         if (new ColumbusContext(mContext).isAvailable()) {
             addService(mColumbusServiceLazy.get());
         }
