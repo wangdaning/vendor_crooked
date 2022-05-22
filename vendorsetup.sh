@@ -1,4 +1,4 @@
-devices=( 'coral' 'oriole' 'raven' 'sunfish')
+devices=( 'coral' 'crosshatch' 'oriole' 'raven' 'sunfish')
 
 function lunch_devices() {
     add_lunch_combo crooked_${device}-user
