@@ -1,3 +1,9 @@
+#
+# Copyright (C) 2018-2022 The Crooked Android Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
     librsjni
@@ -35,9 +41,6 @@ endif
 ifeq ($(CROOKED_BUILD_TYPE),OFFICIAL)
 PRODUCT_PACKAGES += \
     Updater
-else ifneq ($(AB_OTA_PARTITIONS),)
-PRODUCT_PACKAGES += \
-    LocalUpdater
 endif
 
 # Some useful shell based utilities for Android

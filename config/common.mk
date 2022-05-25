@@ -1,4 +1,14 @@
+#
+# Copyright (C) 2022 The Crooked Andorid Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
 include vendor/crooked/build/core/vendor/*.mk
+
+ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+endif
 
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/crooked/build/core/ProductConfigQcom.mk
@@ -49,17 +59,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
 
-# IORap app launch prefetching using Perfetto traces and madvise
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.iorapd.enable=true
-
 # Crooked-specific init file
 PRODUCT_COPY_FILES += \
     vendor/crooked/prebuilt/common/etc/init.crooked.rc:system/etc/init/init.crooked.rc
 
 # Sysconfig
+ifeq ($(ENABLE_GAMETOOLS), true)
 PRODUCT_COPY_FILES += \
     vendor/crooked/prebuilt/common/etc/sysconfig/game_overlay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game_overlay.xml
+endif
 
 # Build ID
 PRODUCT_BUILD_PROP_OVERRIDES += \
