@@ -19,7 +19,8 @@ PRODUCT_PACKAGES += \
     FontArvoLatoOverlay \
     FontBarlowOverlay \
     FontInterOverlay \
-    FontNothiingDotOverlay
+    FontNothiingDotOverlay \
+    FontNothingDotHeadlineOverlay
 
 # Navbar
 PRODUCT_PACKAGES += \
