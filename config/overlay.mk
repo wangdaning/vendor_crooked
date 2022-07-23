@@ -20,7 +20,8 @@ PRODUCT_PACKAGES += \
     FontBarlowOverlay \
     FontInterOverlay \
     FontNothiingDotOverlay \
-    FontNothingDotHeadlineOverlay
+    FontNothingDotHeadlineOverlay \
+    FontUbuntuOverlay 
 
 # Navbar
 PRODUCT_PACKAGES += \
