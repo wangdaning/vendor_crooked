@@ -18,6 +18,7 @@
 PRODUCT_PACKAGES += \
     FontArvoLatoOverlay \
     FontBarlowOverlay \
+    FontCoolstoryOverlay \
     FontInterOverlay \
     FontNothiingDotOverlay \
     FontNothingDotHeadlineOverlay \

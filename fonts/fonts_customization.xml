@@ -167,6 +167,13 @@
     <font weight="700" style="italic">Inter-BoldItalic.ttf</font>
   </family>
   <alias name="inter-medium" to="inter" weight="500" />
+  
+    <!-- Coolstory -->
+    <family customizationType="new-named-family" name="coolstory">
+        <font weight="300" style="normal">Coolstory-Regular.ttf</font>
+    </family>
+    <alias name="coolstory-semi-bold" to="coolstory" weight="600" />
+    <alias name="coolstory-bold" to="coolstory" weight="700" />
 
   <!-- NothingDot -->
     <family customizationType="new-named-family" name="nothingdot">
