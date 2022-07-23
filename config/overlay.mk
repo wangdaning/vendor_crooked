@@ -18,11 +18,12 @@
 PRODUCT_PACKAGES += \
     FontArvoLatoOverlay \
     FontBarlowOverlay \
+    FontCrookedOverlay \
     FontCoolstoryOverlay \
     FontInterOverlay \
     FontNothiingDotOverlay \
     FontNothingDotHeadlineOverlay \
-    FontUbuntuOverlay 
+    FontUbuntuOverlay
 
 # Navbar
 PRODUCT_PACKAGES += \

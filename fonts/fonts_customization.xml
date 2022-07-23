@@ -168,6 +168,13 @@
   </family>
   <alias name="inter-medium" to="inter" weight="500" />
   
+    <!-- Crooked -->
+    <family customizationType="new-named-family" name="crooked">
+        <font weight="300" style="normal">Crooked.ttf</font>
+    </family>
+    <alias name="crooked-semi-bold" to="crooked" weight="600" />
+    <alias name="crooked-bold" to="crooked" weight="700" />
+
     <!-- Coolstory -->
     <family customizationType="new-named-family" name="coolstory">
         <font weight="300" style="normal">Coolstory-Regular.ttf</font>
