@@ -6,15 +6,17 @@
 
 include vendor/crooked/build/core/vendor/*.mk
 
-ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
-$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
-endif
-
+# Conditionally call QCOM makefiles
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/crooked/build/core/ProductConfigQcom.mk
 endif
 
 $(call inherit-product, vendor/qcom/opensource/power/power-vendor-board.mk)
+
+# Define some properties for GMS
+ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -24,12 +26,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 else
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
-endif
-
-ifeq ($(TARGET_USES_BLUR), true)
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.sf.blurs_are_expensive=1 \
-    ro.surface_flinger.supports_background_blur=1
 endif
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -45,29 +41,32 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.disable_rescue=true \
     ro.build.selinux=1
 
-# copy privapp permissions
-PRODUCT_COPY_FILES += \
-    vendor/crooked/prebuilt/common/etc/permissions/privapp-permissions-crooked-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-crooked-product.xml \
-    vendor/crooked/prebuilt/common/etc/permissions/privapp-permissions-crooked-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-crooked-system.xml \
-    vendor/crooked/prebuilt/common/etc/permissions/privapp-permissions-crooked-se.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-crooked-se.xml
+# Conditionally enable blur
+ifeq ($(TARGET_USES_BLUR), true)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.blurs_are_expensive=1 \
+    ro.surface_flinger.supports_background_blur=1
+endif
 
-
+# Make some features conditional
+ifeq ($(ENABLE_GAMETOOLS), true)
 PRODUCT_COPY_FILES += \
-    vendor/crooked/prebuilt/common/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
+    vendor/crooked/prebuilt/etc/sysconfig/game_overlay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game_overlay.xml
+endif
+ifneq ($(DISABLE_COLUMBUS), true)
+PRODUCT_COPY_FILES += \
+    vendor/crooked/prebuilt/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
+endif
 
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
 
-# Crooked-specific init file
+# Copy over some Crooked assets
 PRODUCT_COPY_FILES += \
-    vendor/crooked/prebuilt/common/etc/init.crooked.rc:system/etc/init/init.crooked.rc
-
-# Sysconfig
-ifeq ($(ENABLE_GAMETOOLS), true)
-PRODUCT_COPY_FILES += \
-    vendor/crooked/prebuilt/common/etc/sysconfig/game_overlay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game_overlay.xml
-endif
+    vendor/crooked/prebuilt/etc/init.crooked.rc:system/etc/init/init.crooked.rc \
+    vendor/crooked/prebuilt/etc/permissions/privapp-permissions-crooked-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-crooked-product.xml \
+    vendor/crooked/prebuilt/etc/permissions/privapp-permissions-crooked-se.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-crooked-se.xml
 
 # Build ID
 PRODUCT_BUILD_PROP_OVERRIDES += \
