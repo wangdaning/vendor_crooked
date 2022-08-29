@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2018 The Dirty Unicorns Project
-# Copyright (C) 2020 StatiXOS
+# Copyright (C) 2022 The Crooked Android Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

@@ -5,5 +5,4 @@ PRODUCT_SOONG_NAMESPACES += \
 endif #TARGET_USE_QTI_BT_STACK
 
 include device/statix/sepolicy/common/sepolicy.mk
-include vendor/crooked/config/BoardConfigKernel.mk
 include vendor/crooked/config/BoardConfigSoong.mk

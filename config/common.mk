@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 The Crooked Andorid Project
+# Copyright (C) 2022 The Crooked Android Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -88,21 +88,6 @@ include vendor/crooked/config/fonts.mk
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/crooked/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/crooked/overlay/common
 
-# Black Themes
-PRODUCT_PACKAGES += \
-    AndroidBlackThemeOverlay
-
-# Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED ?= true
-ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
-PRODUCT_PACKAGES += \
-    FaceUnlockService
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
-endif
-
 # Artifact path requirements
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/etc/init/init.crooked.rc \
@@ -112,19 +97,6 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib/librsjni.so \
     system/lib64/libRSSupport.so \
     system/lib64/libblasV8.so \
-    system/etc/permissions/android.hardware.biometrics.face.xml \
-    system/etc/permissions/privapp-permissions-com.crdroid.faceunlock.xml \
-    system/etc/sysconfig/hiddenapi-whitelist-com.crdroid.faceunlock.xml \
-    system/lib64/faceunlock_vendor_dependencies.so \
-    system/lib64/libFaceDetectCA.so \
-    system/lib64/libMegviiUnlock-jni-1.2.so \
-    system/lib64/libMegviiUnlock.so \
-    system/lib64/libarcsoft-lib.so \
-    system/lib64/libarcsoft_faceid.so \
-    system/lib64/libarcsoftbase.so \
-    system/lib64/libmegface.so \
-    system/lib64/libmpbase.so \
-    system/priv-app/FaceUnlockService/FaceUnlockService.apk \
-    system/lib64/librsjni.so
+    system/lib64/librsjni.so \
     system/etc/permissions/privapp_whitelist_com.crooked.updater.xml \
     system/priv-app/Updater/Updater.apk

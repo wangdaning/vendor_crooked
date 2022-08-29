@@ -1,5 +1,5 @@
 # Bring in Qualcomm helper macros
-include vendor/statix/build/core/utils.mk
+include vendor/crooked/build/core/utils.mk
 
 UM_4_4_FAMILY := msm8998 sdm660
 UM_4_9_FAMILY := msm8917 msm8937 msm8952 msm8953 msm8996 sdm845
@@ -108,7 +108,10 @@ PRODUCT_VENDOR_KERNEL_HEADERS += hardware/qcom-caf/$(QCOM_HARDWARE_VARIANT)/kern
 
 # Add display-commonsys-intf to PRODUCT_SOONG_NAMESPACES for QSSI supported platforms
 ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(PRODUCT_BOARD_PLATFORM)),)
-    PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys-intf/display
+    PRODUCT_SOONG_NAMESPACES += \
+    vendor/qcom/opensource/commonsys-intf/display \
+    vendor/qcom/opensource/commonsys/display \
+    vendor/qcom/opensource/display
 endif
 
 # Add data-ipa-cfg-mgr to PRODUCT_SOONG_NAMESPACES if needed
@@ -126,4 +129,4 @@ ifeq ($(USE_NQ_NFC),true)
     PRODUCT_SOONG_NAMESPACES += vendor/nxp/opensource
 endif
 
-include vendor/statix/build/core/qcom_target.mk
+include vendor/crooked/build/core/qcom_target.mk

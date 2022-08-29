@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2022 The Crooked Android Project
+# Copyright (C) 2022 The Crooked Android Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -8,7 +8,7 @@
 PRODUCT_PACKAGES += \
     librsjni
 
-# StatiX Packages
+# Crooked Packages
 PRODUCT_PACKAGES += \
     CustomDoze \
     RepainterServicePriv \
@@ -17,6 +17,7 @@ PRODUCT_PACKAGES += \
     QuickAccessWallet
 
 # App overrides
+$(call inherit-product, vendor/rkicons/product.mk)
 PRODUCT_PACKAGES += \
     StatixLauncher \
     StatixSystemUI \
@@ -53,4 +54,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
+$(call inherit-product, vendor/bromite/bromite.mk)
 -include vendor/crooked/config/overlay.mk

@@ -16,13 +16,32 @@
 
 # Fonts
 PRODUCT_PACKAGES += \
-    FontArvoLatoOverlay \
-    FontBarlowOverlay \
-    FontCoolstoryOverlay \
+    FontDMSansOverlay \
     FontInterOverlay \
-    FontNothiingDotOverlay \
-    FontNothingDotHeadlineOverlay \
-    FontUbuntuOverlay 
+    FontLexendOverlay \
+    FontQuicksandOverlay \
+    FontSwitzerOverlay
+
+# Icon packs
+PRODUCT_PACKAGES += \
+    IconPackCircularAndroidOverlay \
+    IconPackCircularSettingsOverlay \
+    IconPackCircularSystemUIOverlay \
+    IconPackVictorAndroidOverlay \
+    IconPackVictorSettingsOverlay \
+    IconPackVictorSystemUIOverlay \
+    IconPackSamAndroidOverlay \
+    IconPackSamSettingsOverlay \
+    IconPackSamSystemUIOverlay \
+    IconPackKaiAndroidOverlay \
+    IconPackKaiSettingsOverlay \
+    IconPackKaiSystemUIOverlay \
+    IconPackFilledAndroidOverlay \
+    IconPackFilledSettingsOverlay \
+    IconPackFilledSystemUIOverlay \
+    IconPackRoundedAndroidOverlay \
+    IconPackRoundedSettingsOverlay \
+    IconPackRoundedSystemUIOverlay
 
 # Pixel Launcher
 ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)

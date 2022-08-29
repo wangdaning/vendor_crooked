@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 #
-# Copyright (C) 2019-2021 The StatiXOS Project
+# Copyright (C) 2022 The Crooked Android Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 # limitations under the License.
 
 """
-Merge script for StatiXOS
+Merge script for Crooked Android
 
  The source directory; this is automatically two folder up because the script
- is located in vendor/statix/scripts. Other ROMs will need to change this. The logic is
+ is located in vendor/crooked/scripts. Other ROMs will need to change this. The logic is
  as follows:
 
  1. Get the absolute path of the script with os.path.realpath in case there is a symlink

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2021 StatiXOS
+# Copyright 2022 The Crooked Android Project
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ import json
 import sys
 
 def main():
-    """ Validates device statix.dependencies files to make sure nothing is missing when roomservice is run """
+    """ Validates device crooked.dependencies files to make sure nothing is missing when roomservice is run """
     if len(sys.argv) == 1:
         print("No dependencies file to validate!")
         return
@@ -43,8 +43,8 @@ def main():
 
 def suggest_edits(dependency):
     """ Suggests edits inline with roomservice expectations """
-    if dependency['repository'].startswith("StatiXOS"):
-        print("For dependency {}, consider setting remote as 'statix' and removing the StatiXOS/ prefix".format(dependency['repository']))
+    if dependency['repository'].startswith("CrookedAndroid"):
+        print("For dependency {}, consider setting remote as 'crooked' and removing the CrookedAndroid/ prefix".format(dependency['repository']))
     if 'revision' in dependency:
         print("For dependency {}, change 'revision' to 'branch'".format(dependency['repository']))
 
