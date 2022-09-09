@@ -19,9 +19,6 @@ PRODUCT_PACKAGES += \
 # App overrides
 #$(call inherit-product, vendor/rkicons/product.mk)
 PRODUCT_PACKAGES += \
-    StatixLauncher \
-    StatixSystemUI \
-    StatixSettings \
     StatixThemePicker
 
 # Preopt StatixSystemUI
@@ -33,10 +30,8 @@ PRODUCT_PACKAGES += \
     GoogleCameraGo
 
 # Google Pixel Launcher
-ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
 PRODUCT_PACKAGES += \
     PixelLauncher
-endif
 
 # Updaters
 ifeq ($(CROOKED_BUILD_TYPE),OFFICIAL)
