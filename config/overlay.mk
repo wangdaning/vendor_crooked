@@ -74,3 +74,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     NexusLauncherOverlay \
     PixelLauncherConfigOverlay
+
+# Black theme
+PRODUCT_PACKAGES += \
+    AndroidBlackThemeOverlay
