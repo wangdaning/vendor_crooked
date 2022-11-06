@@ -24,11 +24,11 @@ ifneq ($(BUILD_WITH_COLORS),0)
     include $(TOP_DIR)vendor/crooked/build/core/colors.mk
 endif
 
-CROOKED_TARGET_PACKAGE := $(PRODUCT_OUT)/$(CROOKED_UPDATE_VERSION).zip
+CROOKED_UPDATE_TARGET_PACKAGE := $(PRODUCT_OUT)/$(CROOKED_UPDATE_VERSION).zip
 
 .PHONY: eggs
 eggs: $(INTERNAL_UPDATE_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_UPDATE_PACKAGE_TARGET) $(CROOKED_TARGET_PACKAGE)
+	$(hide) ln -f $(INTERNAL_UPDATE_PACKAGE_TARGET) $(CROOKED_UPDATE_TARGET_PACKAGE)
 	@echo -e ${CL_GRN}"Success:" >&2
 
 	@echo -e ${CL_CYN}""
@@ -45,6 +45,6 @@ eggs: $(INTERNAL_UPDATE_PACKAGE_TARGET)
 	@echo -e ${CL_YLW}"Device Name: $(TARGET_DEVICE)"
 	@echo -e ${CL_GRN}"========================================================================="
 	@echo "Package Name: $(CROOKED_UPDATE_VERSION).zip" >&2
-	@echo "Package Size: `du -h $(CROOKED_TARGET_PACKAGE) | cut -f 1`"
+	@echo "Package Size: `du -h $(CROOKED_UPDATE_TARGET_PACKAGE) | cut -f 1`"
 	@echo -e ${CL_GRN}"========================================================================="
 	@echo -e ${CL_RED}"Lets Get Crooked!"

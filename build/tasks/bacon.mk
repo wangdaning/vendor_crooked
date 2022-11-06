@@ -45,7 +45,7 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo -e ${CL_CYN}" "
 	@echo -e ${CL_YLW}"Device Name: $(TARGET_DEVICE)"
 	@echo -e ${CL_GRN}"========================================================================="
-	@echo "Package Name: $(CROOKED_VERSION)" >&2
+	@echo "Package Name: $(CROOKED_VERSION).zip" >&2
 	@echo "Package Size: `du -h $(CROOKED_TARGET_PACKAGE) | cut -f 1`"
 	@echo -e ${CL_GRN}"========================================================================="
 	@echo -e ${CL_RED}"Lets Get Crooked!"
