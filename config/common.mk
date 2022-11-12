@@ -6,6 +6,9 @@
 
 include vendor/crooked/build/core/vendor/*.mk
 
+# Apex
+$(call inherit-product, vendor/crooked/config/apex.mk)
+
 # Conditionally call QCOM makefiles
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/crooked/build/core/ProductConfigQcom.mk
