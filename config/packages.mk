@@ -14,7 +14,8 @@ PRODUCT_PACKAGES += \
     RepainterServicePriv \
     SimpleDeviceConfig \
     StatiXOSWalls \
-    QuickAccessWallet
+    QuickAccessWallet \
+    SettingsIntelligenceGooglePrebuilt
 
 # App overrides
 #$(call inherit-product, vendor/rkicons/product.mk)
