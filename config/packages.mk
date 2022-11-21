@@ -24,7 +24,8 @@ PRODUCT_PACKAGES += \
 
 # Preopt StatixSystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    StatixSystemUI
+    SystemUIGoogle \
+    NexusLaucherRelease
 
 # Google Camera GO
 PRODUCT_PACKAGES += \
