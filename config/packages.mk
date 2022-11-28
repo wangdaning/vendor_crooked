@@ -13,7 +13,7 @@ PRODUCT_PACKAGES += \
     CustomDoze \
     RepainterServicePriv \
     SimpleDeviceConfig \
-    StatiXOSWalls \
+    CrookedWalls \
     QuickAccessWallet \
     SettingsIntelligenceGooglePrebuilt
 
