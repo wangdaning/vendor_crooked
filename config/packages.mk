@@ -20,11 +20,13 @@ PRODUCT_PACKAGES += \
 # App overrides
 #$(call inherit-product, vendor/rkicons/product.mk)
 PRODUCT_PACKAGES += \
-    StatixThemePicker
+    StatixThemePicker \
+    StatixSystemUI \
+    StatixSettings
 
 # Preopt StatixSystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUIGoogle \
+    StatixSystemUI \
     NexusLaucherRelease
 
 # Google Camera GO
