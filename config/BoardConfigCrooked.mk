@@ -4,5 +4,5 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/commonsys/system/bt/conf
 endif #TARGET_USE_QTI_BT_STACK
 
-include device/lineage/sepolicy/common/sepolicy.mk
+include device/statix/sepolicy/common/sepolicy.mk
 include vendor/crooked/config/BoardConfigSoong.mk

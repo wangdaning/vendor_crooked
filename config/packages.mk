@@ -34,10 +34,8 @@ PRODUCT_PACKAGES += \
     GoogleCameraGo
 
 # Google Pixel Launcher
-ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
 PRODUCT_PACKAGES += \
     PixelLauncher
-endif
 
 # Updaters
 ifeq ($(CROOKED_BUILD_TYPE),OFFICIAL)

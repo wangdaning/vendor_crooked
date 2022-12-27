@@ -72,11 +72,9 @@ PRODUCT_PACKAGES += \
     IconPackVictorThemePickerOverlay
 
 # Pixel Launcher
-ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
 PRODUCT_PACKAGES += \
     NexusLauncherOverlay \
     PixelLauncherConfigOverlay
-endif
 
 # Black theme
 PRODUCT_PACKAGES += \
