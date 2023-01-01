@@ -10,8 +10,8 @@ BUILD_TIME := $(shell date +%H%M)
 
 ## Versioning System
 # Set all versions
-CROOKED_BASE_VERSION := v2.2
-CROOKED_PLATFORM_VERSION := T
+CROOKED_BASE_VERSION := v3.0
+CROOKED_PLATFORM_VERSION := T-qpr1
 
 # Use signing keys and don't print date & time in the final zip for official builds
 ifndef CROOKED_BUILD_TYPE
