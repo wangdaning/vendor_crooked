@@ -106,4 +106,4 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib64/librsjni.so
 
 # Pixel Framework
-# $(call inherit-product, vendor/pixel-framework/config.mk)
+$(call inherit-product, vendor/pixel-framework/config.mk)

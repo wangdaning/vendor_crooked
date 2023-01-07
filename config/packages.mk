@@ -21,9 +21,7 @@ PRODUCT_PACKAGES += \
 # App overrides
 #$(call inherit-product, vendor/rkicons/product.mk)
 PRODUCT_PACKAGES += \
-    StatixThemePicker \
-    StatixSystemUI \
-    StatixSettings
+    StatixThemePicker
 
 # Preopt StatixSystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \

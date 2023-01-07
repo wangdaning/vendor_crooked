@@ -13,13 +13,12 @@ BUILD_TIME := $(shell date +%H%M)
 CROOKED_BASE_VERSION := v3.0
 CROOKED_PLATFORM_VERSION := T-qpr1
 
-# Use signing keys and don't print date & time in the final zip for official builds
+# Don't print date & time in the final zip for official builds
 ifndef CROOKED_BUILD_TYPE
     CROOKED_BUILD_TYPE := UNOFFICIAL
 endif
 
 ifeq ($(CROOKED_BUILD_TYPE),OFFICIAL)
-    PRODUCT_DEFAULT_DEV_CERTIFICATE := ./.keys/releasekey
     CROOKED_VERSION := $(TARGET_PRODUCT)-$(CROOKED_BASE_VERSION)-$(BUILD_DATE)-$(CROOKED_PLATFORM_VERSION)-$(CROOKED_BUILD_TYPE)
 else
     CROOKED_VERSION := $(TARGET_PRODUCT)-$(CROOKED_BASE_VERSION)-$(BUILD_DATE)-$(BUILD_TIME)-$(CROOKED_PLATFORM_VERSION)-$(CROOKED_BUILD_TYPE)
