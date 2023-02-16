@@ -13,18 +13,14 @@ PRODUCT_PACKAGES += \
     CustomDoze \
     RepainterServicePriv \
     SimpleDeviceConfig \
+    ThemePicker \
     CrookedWalls \
     QuickAccessWallet \
     SettingsIntelligenceGooglePrebuilt
 
-# App overrides
-#$(call inherit-product, vendor/rkicons/product.mk)
-PRODUCT_PACKAGES += \
-    StatixThemePicker
-
 # Preopt StatixSystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    StatixSystemUI \
+    SystemUIGoogle \
     NexusLaucherRelease
 
 # Google Camera GO

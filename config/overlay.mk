@@ -71,6 +71,25 @@ PRODUCT_PACKAGES += \
     IconPackVictorSystemUIOverlay \
     IconPackVictorThemePickerOverlay
 
+# Icon shapes
+PRODUCT_PACKAGES += \
+    IconShapeFlowerOverlay \
+    IconShapeHeartOverlay \
+    IconShapeHexagonOverlay \
+    IconShapeLeafOverlay \
+    IconShapeCloudyOverlay \
+    IconShapeCylindricalOverlay \
+    IconShapeStretchedOverlay \
+    IconShapePebbleOverlay \
+    IconShapeRoundedRectOverlay \
+    IconShapeSquareOverlay \
+    IconShapeSquircleOverlay \
+    IconShapeTaperedRectOverlay \
+    IconShapeTeardropOverlay \
+    IconShapeVesselOverlay \
+    IconShapeRoundedHexagonOverlay \
+    RohieIconMeowOverlay
+
 # Pixel Launcher
 PRODUCT_PACKAGES += \
     NexusLauncherOverlay \
