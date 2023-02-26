@@ -14,7 +14,7 @@
     <string name="config_clockFontFamily" translatable="false">google-sans-clock</string>
 
     <string-array name="config_locationProviderPackageNames" translatable="false">
-        <!-- The Google provider -->
+        <!-- The Google provider -->s.xml
         <item>com.google.android.gms</item>
         <!-- The standard AOSP fused location provider -->
         <item>com.android.location.fused</item>
@@ -26,6 +26,12 @@
         <!-- ImsService -->
         <item>com.shannon.imsservice</item>
     </string-array>
+    
+    <!-- Colon separated list of package names that should be granted Notification Listener access -->
+    <string name="config_defaultListenerAccessPackages" translatable="false">com.google.android.apps.nexuslauncher:com.google.android.setupwizard:com.google.android.apps.pixelmigrate:com.google.android.as</string>
+
+    <!-- Package name that should be granted Notification Assistant access -->
+    <string name="config_defaultAssistantAccessPackage" translatable="false">com.google.android.ext.services</string>
 
     <!-- Set icon mask to circle -->
     <string name="config_icon_mask" translatable="false">"M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0"</string>
@@ -76,7 +82,7 @@
 
     <!-- Whether or not to add a "people" notifications section -->
     <bool name="config_usePeopleFiltering">true</bool>
-
+   
     <!-- List of packages that can use the Conversation space for their category messages
     notifications until they target R -->
     <string-array name="config_notificationMsgPkgsAllowedAsConvos" translatable="false">
@@ -95,13 +101,13 @@
         <item>com.linkedin.android</item>
         <item>com.tencent.mm</item>
     </string-array>
-
+    
     <!-- Flag indicating which package name can access DeviceConfig table -->
     <string name="config_deviceConfiguratorPackageName" translatable="false">org.protonaosp.deviceconfig</string>
 
     <!-- Whether safe headphone volume is enabled or not. -->
     <bool name="config_safe_media_volume_enabled">false</bool>
-
+    
     <!-- Control the behavior when the user long presses the power button.
             0 - Nothing
             1 - Global actions menu
