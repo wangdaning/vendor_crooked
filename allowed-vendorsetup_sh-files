@@ -1,1 +1,3 @@
 vendor/crooked/vendorsetup.sh
+
+vendor/qcom/opensource/core-utils/vendorsetup.sh

@@ -16,16 +16,17 @@
 #
 
 # Boot Animation
-scr_resolution := 1440
-crooked_device := $(patsubst %f,%,$(subst crooked_,,$(TARGET_PRODUCT)))
-
-ifneq ($(filter mido oneplus3,$(crooked_device)),)
-scr_resolution := 1080
-endif
-
-ifneq ($(wildcard vendor/crooked/bootanimation/$(scr_resolution).zip),)
-PRODUCT_COPY_FILES += \
-    vendor/crooked/bootanimation/$(scr_resolution).zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
+ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
+     PRODUCT_COPY_FILES += vendor/crooked/bootanimation/1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+else ifeq ($(TARGET_BOOT_ANIMATION_RES),1440)
+     PRODUCT_COPY_FILES += vendor/crooked/bootanimation/1440.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+else
+    ifeq ($(TARGET_BOOT_ANIMATION_RES),)
+        $(warning "TARGET_BOOT_ANIMATION_RES is undefined, assuming 1080p")
+    else
+        $(warning "Current bootanimation res is not supported, forcing 1080p")
+    endif
+    PRODUCT_COPY_FILES += vendor/crooked/bootanimation/1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 endif
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \

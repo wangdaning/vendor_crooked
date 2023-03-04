@@ -7,7 +7,7 @@
 include vendor/crooked/build/core/vendor/*.mk
 
 # Apex
-$(call inherit-product-if-exists, vendor/partner_modules/build/mainline_modules.mk)
+include  vendor/partner_modules/build/mainline_modules_flatten_apex.mk
 
 # Conditionally call QCOM makefiles
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
@@ -28,8 +28,6 @@ else
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
-
-$(call inherit-product, vendor/crooked/config/rro_overlays_pixel_7.mk)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     keyguard.no_require_sim=true \
